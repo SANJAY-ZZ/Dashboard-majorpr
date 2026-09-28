@@ -178,7 +178,7 @@ const seedDatabase = async (shouldDisconnect = true) => {
       },
       {
         title: 'Design Dashboard Visual Architecture',
-        description: 'Architect KPI grid, interactive charts, and 3D Project Core visualization.',
+        description: 'Architect KPI grid, interactive charts, and workload distribution analytics.',
         assignedTo: sneha._id,
         projectId: pEMS._id,
         priority: 'High',

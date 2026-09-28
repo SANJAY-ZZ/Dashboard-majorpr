@@ -173,7 +173,7 @@ const getDashboardStats = async (req, res, next) => {
       };
     });
 
-    // 5. 3D Project Core Graph Network Data
+    // 5. Relational Graph Network Data
     // Constructs the relational topology: EMPLOYEES -> PROJECTS -> TASKS
     const graphNodes = [];
     const graphLinks = [];
@@ -221,7 +221,7 @@ const getDashboardStats = async (req, res, next) => {
       });
     });
 
-    // Task Nodes (Top recent tasks for 3D clarity)
+    // Task Nodes (Top recent tasks)
     recentTasks.forEach((t) => {
       if (t.projectId && t.assignedTo) {
         const taskId = `task-${t._id}`;

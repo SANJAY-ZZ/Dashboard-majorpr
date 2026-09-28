@@ -11,7 +11,7 @@
 
 This application is an enterprise-grade, full-stack web application designed for end-to-end management of corporate employees, projects, task deliverables, and team productivity analytics.
 
-The **Dashboard (Module 5)** serves as the central operational intelligence hub. It integrates directly with the underlying MongoDB database via Express RESTful aggregation APIs, delivering real-time Key Performance Indicators (KPIs), dynamically calculated project delivery velocity, individual employee workload analytics, priority task queues, and an interactive **3D Project Core** network built using Three.js / React Three Fiber.
+Module 5 Dashboard provides a professional analytical view of employee, project, and task data using real-time MongoDB-backed KPIs, project progress, employee workload analytics, and recent/priority task information.
 
 ---
 
@@ -19,7 +19,6 @@ The **Dashboard (Module 5)** serves as the central operational intelligence hub.
 
 - **Frontend:** React.js (v18), Vite (v5)
 - **Styling:** Tailwind CSS (v3) with Dark-First Enterprise SaaS theme
-- **3D Graphics:** Three.js (v0.168), React Three Fiber (`@react-three/fiber`), Drei (`@react-three/drei`)
 - **Backend:** Node.js (v18+), Express.js (v4)
 - **Database / ODM:** MongoDB with Mongoose (v8) + Automatic In-Memory Mongo fallback (`mongodb-memory-server`) for zero-setup execution
 - **Authentication:** JWT (JSON Web Tokens) with bcrypt password hashing
@@ -69,17 +68,12 @@ Aggregated per team member across all assigned tasks:
 
 Rendered with an interactive stacked bar chart featuring hover tooltips and department filtering.
 
-### 3.4 Interactive 3D Project Core (`ProjectCore3D.jsx`)
-Visualizes the foundational relational topology:
-$$\text{EMPLOYEES} \longrightarrow \text{PROJECTS} \longrightarrow \text{TASKS}$$
-
-- **Core Geometry:** Faceted glowing octahedron at the center representing the selected active project.
-- **Satellites:** Orbiting cyan spheres for assigned employees and emerald/amber satellites for tasks.
-- **Dynamic Connecting Lines:** Visual vectors showing active work relationships.
-- **Interactions:** Mouse tilt parallax, continuous slow rotation, project selection buttons, play/pause controls.
-- **Accessibility & Fallback:**
-  - Detects `prefers-reduced-motion` and disables rotational animation for motion sensitivity.
-  - Automatically activates a clean **2D Canvas / SVG topology fallback** if WebGL is unsupported or disabled.
+### 3.4 Priority Tasks & Recent Activity Overview
+Provides immediate operational oversight of pressing deliverables:
+- **Priority Badging:** Instant visual sorting by High, Medium, and Low urgency.
+- **Project & Assignee Context:** Live links associating tasks with their respective project and responsible team member.
+- **Due Date Tracking:** Relative time calculations and overdue indicators.
+- **Inline Status Updates:** Real-time state toggling directly updating MongoDB.
 
 ---
 
@@ -121,7 +115,6 @@ ESPD_/
 │   │   │   ├── dashboard/
 │   │   │   │   ├── DashboardHeader.jsx  # Hero greeting, live clock, refresh button
 │   │   │   │   ├── StatCard.jsx         # Animated counter KPI card with route navigation
-│   │   │   │   ├── ProjectCore3D.jsx    # Three.js 3D Project Core with 2D fallback
 │   │   │   │   ├── ProjectProgress.jsx  # Task-driven delivery velocity bars & search
 │   │   │   │   ├── EmployeeTaskStats.jsx# Stacked bar chart workload analytics
 │   │   │   │   ├── RecentTasks.jsx      # Priority tasks table with quick completion toggle

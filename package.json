@@ -14,9 +14,7 @@
     "employee-management",
     "task-management",
     "project-management",
-    "dashboard",
-    "threejs",
-    "react-three-fiber"
+    "dashboard"
   ],
   "author": "Sanjay Kumar & Team",
   "license": "MIT"

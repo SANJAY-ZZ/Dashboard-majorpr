@@ -273,11 +273,11 @@ const runDashboardTests = async () => {
     assert(priyaStats.totalTasks === 2 && priyaStats.completedTasks === 1 && priyaStats.pendingTasks === 1,
       'Priya Das task breakdown matches expected counts (1 completed, 1 pending)');
 
-    // 7. Test 3D Project Core Graph Data Structure
-    console.log(`\n${colors.yellow}7. 3D Project Core Graph Network Data${colors.reset}`);
+    // 7. Test Relational Graph Network Data Structure
+    console.log(`\n${colors.yellow}7. Relational Graph Network Data${colors.reset}`);
     const graphData = statsBody.data.graphData;
     assert(Boolean(graphData) && Array.isArray(graphData.nodes) && Array.isArray(graphData.links),
-      'graphData contains nodes and links arrays for 3D Project Core');
+      'graphData contains nodes and links arrays for relational graph data');
 
     const projectNodes = graphData.nodes.filter((n) => n.type === 'PROJECT');
     const employeeNodes = graphData.nodes.filter((n) => n.type === 'EMPLOYEE');
