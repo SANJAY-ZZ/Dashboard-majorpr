@@ -1,0 +1,23 @@
+{
+  "name": "employee-task-project-management-web-application",
+  "version": "1.0.0",
+  "description": "Enterprise Employee Task & Project Management Full-Stack Web Application (Internship Group Project)",
+  "scripts": {
+    "start:backend": "cd backend && npm start",
+    "start:frontend": "cd frontend && npm run dev",
+    "seed": "cd backend && npm run seed",
+    "test:backend": "cd backend && npm test",
+    "build:frontend": "cd frontend && npm run build"
+  },
+  "keywords": [
+    "mern",
+    "employee-management",
+    "task-management",
+    "project-management",
+    "dashboard",
+    "threejs",
+    "react-three-fiber"
+  ],
+  "author": "Sanjay Kumar & Team",
+  "license": "MIT"
+}

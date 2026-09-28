@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-[#0B0D0F] text-[#EAE6E1] font-sans min-h-screen;
+    background-color: #0B0D0F;
+  }
+}
+
+/* Custom Restrained Scrollbars */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #111417;
+}
+::-webkit-scrollbar-thumb {
+  background: #262B30;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3A4047;
+}
+
+/* Editorial Surface Helpers */
+.surface-card {
+  background-color: #14171A;
+  border: 1px solid #23272B;
+  border-radius: 0.75rem;
+}
+
+.surface-elevated {
+  background-color: #181B1F;
+  border: 1px solid #262A2E;
+  border-radius: 0.75rem;
+}
+
+/* Subtle Champagne Silk Wave in Hero */
+.champagne-silk-bg {
+  position: relative;
+  overflow: hidden;
+}
+.champagne-silk-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 60%;
+  height: 100%;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 85% 65% at 85% 25%,
+    rgba(216, 206, 190, 0.08) 0%,
+    rgba(180, 165, 145, 0.03) 40%,
+    transparent 75%
+  );
+}
+
+/* Subtle Shimmer for Skeletons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.02) 25%,
+    rgba(255, 255, 255, 0.05) 50%,
+    rgba(255, 255, 255, 0.02) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
